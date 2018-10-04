@@ -4,6 +4,7 @@ import Raven from 'raven-js';
 import appendQuery from 'append-query';
 import { apiRequest } from '../../../platform/utilities/api';
 import _ from '../../../platform/utilities/data';
+import { transformForSubmit } from 'us-forms-system/lib/js/helpers';
 
 import {
   RESERVE_GUARD_TYPES,
@@ -240,3 +241,12 @@ export const hasVAEvidence = formData =>
 
 export const hasPrivateEvidence = formData =>
   _.get(DATA_PATHS.hasPrivateEvidence, formData, false);
+
+export const transform = (formConfig, form) => {
+  const formData = transformForSubmit(formConfig, form);
+  return JSON.stringify({
+    form526AllClaims: {
+      form: formData,
+    },
+  });
+};

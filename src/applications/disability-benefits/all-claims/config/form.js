@@ -11,6 +11,7 @@ import {
   prefillTransformer,
   hasVAEvidence,
   hasPrivateEvidence,
+  transform,
 } from '../utils';
 
 import { veteranInfoDescription } from '../content/veteranDetails';
@@ -58,7 +59,7 @@ const formConfig = {
     noAuth:
       'Please sign in again to resume your application for disability claims increase.',
   },
-  // transformForSubmit: transform,
+  transformForSubmit: transform,
   introduction: IntroductionPage,
   confirmation: ConfirmationPage,
   // footerContent: FormFooter,
