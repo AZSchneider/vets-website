@@ -58,6 +58,11 @@ import {
   schema as informationInterviewAssaultSchema,
 } from './informationInterviewAssault';
 
+import {
+  uiSchema as incidentLocationUISchema,
+  schema as incidentLocationSchema,
+} from './incidentLocation';
+
 export const ptsdType = {
   uiSchema: ptsdTypeUISchema,
   schema: ptsdTypeSchema,
@@ -116,4 +121,9 @@ export const informationInterviewAssault = {
 export const stressfulIncSecDesc = {
   uiSchema: stressfulIncSecDescUISchema,
   schema: stressfulIncSecDescSchema,
+};
+
+export const incidentLocation = {
+  uiSchema: incidentLocationUISchema,
+  schema: incidentLocationSchema,
 };

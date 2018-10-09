@@ -28,6 +28,7 @@ import {
   informationInterviewCombat,
   informationInterviewAssault,
   stressfulIncSecDesc,
+  incidentLocation,
 } from '../pages';
 
 const formConfig = {
@@ -79,6 +80,16 @@ const formConfig = {
             form['view:selectablePtsdTypes']['view:noncombatPtsdType'],
           uiSchema: ptsdChoice.uiSchema,
           schema: ptsdChoice.schema,
+        },
+        incidentLocation: {
+          title: 'Incident Location',
+          path: 'incidentLocation',
+          depends: form =>
+            form['view:uploadPtsdChoice'] === 'answerQuestions' &&
+            (form['view:selectablePtsdTypes']['view:combatPtsdType'] ||
+              form['view:selectablePtsdTypes']['view:noncombatPtsdType']),
+          uiSchema: incidentLocation.uiSchema,
+          schema: incidentLocation.schema,
         },
         individualsInvolvedChoice: {
           title: 'Individuals Involved Choice',
