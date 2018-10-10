@@ -249,16 +249,16 @@ export function locationSchemas() {
         ...addressUIConfig.state,
         'ui:title': 'State/Province',
       },
-      incidentLandMark: {
+      incidentLandmark: {
         'ui:title': 'Landmark or Military Installation',
       },
-      'ui:order': ['country', 'city', 'state', 'incidentLandMark'],
+      'ui:order': ['country', 'city', 'state', 'incidentLandmark'],
     },
     addressSchema: {
       ...addressSchemaConfig,
       properties: {
         ...omit(addressSchemaConfig.properties, addressOmitions),
-        incidentLandMark: {
+        incidentLandmark: {
           type: 'string',
         },
       },

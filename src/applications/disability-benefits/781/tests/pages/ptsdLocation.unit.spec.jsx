@@ -1,7 +1,10 @@
 import React from 'react';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { DefinitionTester } from '../../../../../platform/testing/unit/schemaform-utils.jsx';
+import {
+  DefinitionTester,
+  fillData,
+} from '../../../../../platform/testing/unit/schemaform-utils.jsx';
 import { mount } from 'enzyme';
 import formConfig from '../../config/form';
 
@@ -21,7 +24,24 @@ describe('781 PTSD Location', () => {
       />,
     );
 
-    expect(form.find('input[type="radio"]').length).to.equal(3);
+    expect(form.find('input[type="text"]').length).to.equal(2);
+    expect(form.find('select').length).to.equal(2);
+  });
+
+  it('should render state field as text for countries other than USA, MEX, and CAN', () => {
+    const form = mount(
+      <DefinitionTester
+        schema={schema}
+        uiSchema={uiSchema}
+        data={{}}
+        formData={{}}
+      />,
+    );
+
+    fillData(form, 'select#root_incidentLocation_country', 'ABW');
+
+    expect(form.find('input[type="text"]').length).to.equal(3);
+    expect(form.find('select').length).to.equal(1);
   });
 
   it('should submit', () => {
