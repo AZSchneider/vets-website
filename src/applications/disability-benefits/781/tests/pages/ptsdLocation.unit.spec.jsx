@@ -19,7 +19,11 @@ describe('781 PTSD Location', () => {
       <DefinitionTester
         schema={schema}
         uiSchema={uiSchema}
-        data={{}}
+        data={{
+          'view:selectablePtsdTypes': {
+            'view:combatPtsdType': true,
+          },
+        }}
         formData={{}}
       />,
     );
@@ -34,7 +38,11 @@ describe('781 PTSD Location', () => {
       <DefinitionTester
         schema={schema}
         uiSchema={uiSchema}
-        data={{}}
+        data={{
+          'view:selectablePtsdTypes': {
+            'view:combatPtsdType': true,
+          },
+        }}
         formData={{}}
       />,
     );
@@ -53,7 +61,11 @@ describe('781 PTSD Location', () => {
       <DefinitionTester
         schema={schema}
         uiSchema={uiSchema}
-        data={{}}
+        data={{
+          'view:selectablePtsdTypes': {
+            'view:combatPtsdType': true,
+          },
+        }}
         formData={{}}
         onSubmit={onSubmit}
       />,
