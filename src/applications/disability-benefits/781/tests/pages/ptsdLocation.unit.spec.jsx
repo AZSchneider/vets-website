@@ -24,7 +24,8 @@ describe('781 PTSD Location', () => {
       />,
     );
 
-    expect(form.find('input[type="text"]').length).to.equal(2);
+    expect(form.find('input[type="text"]').length).to.equal(1);
+    expect(form.find('textarea').length).to.equal(1);
     expect(form.find('select').length).to.equal(2);
   });
 
@@ -40,7 +41,8 @@ describe('781 PTSD Location', () => {
 
     fillData(form, 'select#root_incidentLocation_country', 'ABW');
 
-    expect(form.find('input[type="text"]').length).to.equal(3);
+    expect(form.find('input[type="text"]').length).to.equal(2);
+    expect(form.find('textarea').length).to.equal(1);
     expect(form.find('select').length).to.equal(1);
   });
 

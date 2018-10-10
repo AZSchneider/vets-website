@@ -8,11 +8,7 @@ const PtsdNameTitle = () => (
 );
 
 const ptsdLocationDescription = () => (
-  <p>
-    Where did the event happen? Please be as specific as you can and include the
-    name of the city, state, country, province, landmark, or military
-    installation.
-  </p>
+  <p>Where did the event happen? Please be as specific as you can.</p>
 );
 
 const { addressUI, addressSchema } = locationSchemas();
