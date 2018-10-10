@@ -5,11 +5,11 @@ import { DefinitionTester } from '../../../../../platform/testing/unit/schemafor
 import { mount } from 'enzyme';
 import formConfig from '../../config/form';
 
-describe('User makes individuals involved selection', () => {
+describe('781 PTSD Location', () => {
   const {
     schema,
     uiSchema,
-  } = formConfig.chapters.disabilityDetails.pages.individualsInvolvedChoice;
+  } = formConfig.chapters.disabilityDetails.pages.ptsdLocation;
 
   it('should render', () => {
     const form = mount(
