@@ -252,13 +252,7 @@ export function locationSchemas() {
       incidentLandMark: {
         'ui:title': 'Landmark or Military Installation',
       },
-      'ui:order': [
-        'country',
-        'city',
-        'state',
-        'incidentLandMark',
-        'additionalDetails',
-      ],
+      'ui:order': ['country', 'city', 'state', 'incidentLandMark'],
     },
     addressSchema: {
       ...addressSchemaConfig,

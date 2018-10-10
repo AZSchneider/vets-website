@@ -12,7 +12,7 @@ import formConfig from '../../config/form';
 
 describe('781a Incident Date', () => {
   const page =
-    formConfig.chapters.introductionPage.pages.ptsdSecondaryAssignmentDetails;
+    formConfig.chapters.disabilityDetails.pages.ptsdSecondaryAssignmentDetails;
   const { schema, uiSchema, arrayPath } = page;
 
   it('should render', () => {

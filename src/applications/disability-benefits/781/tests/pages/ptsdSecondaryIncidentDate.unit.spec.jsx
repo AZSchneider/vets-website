@@ -11,7 +11,7 @@ import formConfig from '../../config/form';
 
 describe('781a Incident Date', () => {
   const page =
-    formConfig.chapters.introductionPage.pages.ptsdSecondaryIncidentDate;
+    formConfig.chapters.disabilityDetails.pages.ptsdSecondaryIncidentDate;
   const { schema, uiSchema, arrayPath } = page;
 
   it('should render', () => {
