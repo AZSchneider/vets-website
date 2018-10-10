@@ -59,9 +59,9 @@ import {
 } from './informationInterviewAssault';
 
 import {
-  uiSchema as incidentLocationUISchema,
-  schema as incidentLocationSchema,
-} from './incidentLocation';
+  uiSchema as ptsdLocationUISchema,
+  schema as ptsdLocationSchema,
+} from './ptsdLocation';
 
 export const ptsdType = {
   uiSchema: ptsdTypeUISchema,
@@ -123,7 +123,7 @@ export const stressfulIncSecDesc = {
   schema: stressfulIncSecDescSchema,
 };
 
-export const incidentLocation = {
-  uiSchema: incidentLocationUISchema,
-  schema: incidentLocationSchema,
+export const ptsdLocation = {
+  uiSchema: ptsdLocationUISchema,
+  schema: ptsdLocationSchema,
 };
