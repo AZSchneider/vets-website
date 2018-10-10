@@ -29,6 +29,7 @@ import {
   informationInterviewAssault,
   stressfulIncSecDesc,
   ptsdLocation,
+  ptsdAssignmentDetails,
 } from '../pages';
 
 const formConfig = {
@@ -79,6 +80,15 @@ const formConfig = {
             form['view:selectablePtsdTypes']['view:noncombatPtsdType'],
           uiSchema: ptsdChoice.uiSchema,
           schema: ptsdChoice.schema,
+        },
+        ptsdAssignmentDetails: {
+          path: 'ptsdAssignmentDetails',
+          title: 'PTSD Unit Assignment Details',
+          depends: form =>
+            form['view:selectablePtsdTypes']['view:combatPtsdType'] ||
+            form['view:selectablePtsdTypes']['view:noncombatPtsdType'],
+          uiSchema: ptsdAssignmentDetails.uiSchema,
+          schema: ptsdAssignmentDetails.schema,
         },
         ptsdLocation: {
           title: 'PTSD Location',

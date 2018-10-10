@@ -63,6 +63,11 @@ import {
   schema as ptsdLocationSchema,
 } from './ptsdLocation';
 
+import {
+  uiSchema as ptsdAssignmentUISchema,
+  schema as ptsdAssignmentSchema,
+} from './ptsdAssignmentDetails';
+
 export const ptsdType = {
   uiSchema: ptsdTypeUISchema,
   schema: ptsdTypeSchema,
@@ -126,4 +131,9 @@ export const stressfulIncSecDesc = {
 export const ptsdLocation = {
   uiSchema: ptsdLocationUISchema,
   schema: ptsdLocationSchema,
+};
+
+export const ptsdAssignmentDetails = {
+  uiSchema: ptsdAssignmentUISchema,
+  schema: ptsdAssignmentSchema,
 };
