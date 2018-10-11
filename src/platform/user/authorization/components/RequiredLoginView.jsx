@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { intersection } from 'lodash';
 
+import AlertBox from '@department-of-veterans-affairs/formation/AlertBox';
 import LoadingIndicator from '@department-of-veterans-affairs/formation/LoadingIndicator';
 import SystemDownView from '@department-of-veterans-affairs/formation/SystemDownView';
 
@@ -84,9 +85,10 @@ class RequiredLoginView extends React.Component {
     ) {
       // If va_profile is "not found", show message that we cannot find the user in our system.
       return (
-        <SystemDownView
-          messageLine1="We couldn’t find your records with that information."
-          messageLine2="Please call the Vets.gov Help Desk at 1-855-574-7286, TTY: 1-800-877-8339. We're open Monday &#8211; Friday, 8:00 a.m. &#8211; 8:00 p.m. (ET)."
+        <AlertBox
+          headline="Some parts of the site aren’t working right now"
+          content="We’re sorry. We’re having trouble looking up accounts in our records. You may not be able to use some parts of the site until we fix the problem. Please try again later."
+          status="warning"
         />
       );
     }
