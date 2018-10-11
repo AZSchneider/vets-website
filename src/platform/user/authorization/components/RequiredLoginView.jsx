@@ -73,11 +73,15 @@ class RequiredLoginView extends React.Component {
 
     // TODO: If unable to fetch MVI data or unable to determine veteran status,
     // perhaps that should be reflected in how the API determines whether
-    // the services is accessible.
+    // the service is accessible.
     if (user.profile.status === 'SERVER_ERROR' && !attemptingAppealsAccess) {
-      // If va_profile is null, show a system down message.
       return (
-        <SystemDownView messageLine1="Sorry, our system is temporarily down while we fix a few things. Please try again later." />
+        <AlertBox
+          headline="Some parts of the site aren’t working right now"
+          content="We’re sorry. We’re having trouble looking up accounts in our records. You may not be able to use some parts of the site until we fix the problem. Please try again later."
+          status="warning"
+          isVisible
+        />
       );
     } else if (
       user.profile.status === 'NOT_FOUND' &&
@@ -85,10 +89,9 @@ class RequiredLoginView extends React.Component {
     ) {
       // If va_profile is "not found", show message that we cannot find the user in our system.
       return (
-        <AlertBox
-          headline="Some parts of the site aren’t working right now"
-          content="We’re sorry. We’re having trouble looking up accounts in our records. You may not be able to use some parts of the site until we fix the problem. Please try again later."
-          status="warning"
+        <SystemDownView
+          messageLine1="We couldn’t find your records with that information."
+          messageLine2="Please call the Vets.gov Help Desk at 1-855-574-7286, TTY: 1-800-877-8339. We're open Monday &#8211; Friday, 8:00 a.m. &#8211; 8:00 p.m. (ET)."
         />
       );
     }
