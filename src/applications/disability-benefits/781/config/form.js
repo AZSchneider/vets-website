@@ -32,6 +32,7 @@ const formConfig = {
   title: 'Apply for increased disability compensation',
   chapters: {
     introductionPage: {
+      title: 'Introduction',
       pages: {
         ptsdIntroduction: {
           title: 'Disability Details',
