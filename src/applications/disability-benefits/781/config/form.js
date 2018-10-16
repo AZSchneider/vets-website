@@ -22,6 +22,8 @@ import {
   uploadPtsdSecondary,
   informationInterviewCombat,
   informationInterviewAssault,
+  ptsdAssignmentDetails,
+  ptsdSecondaryAssignmentDetails,
 } from '../pages';
 
 const formConfig = {
@@ -68,6 +70,15 @@ const formConfig = {
           uiSchema: ptsdChoice.uiSchema,
           schema: ptsdChoice.schema,
         },
+        ptsdAssignmentDetails: {
+          path: 'ptsdAssignmentDetails',
+          title: 'PTSD Unit Assignment Details',
+          depends: form =>
+            form['view:selectablePtsdTypes']['view:combatPtsdType'] ||
+            form['view:selectablePtsdTypes']['view:noncombatPtsdType'],
+          uiSchema: ptsdAssignmentDetails.uiSchema,
+          schema: ptsdAssignmentDetails.schema,
+        },
         uploadPtsd: {
           path: 'upload-781',
           title: 'Disability Details',
@@ -107,6 +118,16 @@ const formConfig = {
               form['view:selectablePtsdTypes']['view:assaultPtsdType']),
           uiSchema: uploadPtsdSecondary.uiSchema,
           schema: uploadPtsdSecondary.schema,
+        },
+        ptsdSecondaryAssignmentDetails: {
+          path: 'ptsdSecondaryAssignmentDetails',
+          title: 'Disability Details',
+          depends: form =>
+            form['view:uploadPtsdSecondaryChoice'] === 'answerQuestions' &&
+            (form['view:selectablePtsdTypes']['view:mstPtsdType'] ||
+              form['view:selectablePtsdTypes']['view:assaultPtsdType']),
+          uiSchema: ptsdSecondaryAssignmentDetails.uiSchema,
+          schema: ptsdSecondaryAssignmentDetails.schema,
         },
         informationInterviewAssault: {
           path: 'information-781a',

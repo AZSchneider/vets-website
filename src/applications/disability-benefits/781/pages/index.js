@@ -38,6 +38,16 @@ import {
   schema as informationInterviewAssaultSchema,
 } from './informationInterviewAssault';
 
+import {
+  uiSchema as ptsdAssignmentUISchema,
+  schema as ptsdAssignmentSchema,
+} from './ptsdAssignmentDetails';
+
+import {
+  uiSchema as ptsdSecondaryAssignmentUISchema,
+  schema as ptsdSecondaryAssignmentSchema,
+} from './ptsdSecondaryAssignmentDetails';
+
 export const informationPage = {
   uiSchema: informationUISchema,
   schema: informationSchema,
@@ -76,4 +86,14 @@ export const informationInterviewCombat = {
 export const informationInterviewAssault = {
   uiSchema: informationInterviewAssaultUISchema,
   schema: informationInterviewAssaultSchema,
+};
+
+export const ptsdAssignmentDetails = {
+  uiSchema: ptsdAssignmentUISchema,
+  schema: ptsdAssignmentSchema,
+};
+
+export const ptsdSecondaryAssignmentDetails = {
+  uiSchema: ptsdSecondaryAssignmentUISchema,
+  schema: ptsdSecondaryAssignmentSchema,
 };
