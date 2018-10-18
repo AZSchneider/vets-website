@@ -38,6 +38,16 @@ import {
   schema as informationInterviewAssaultSchema,
 } from './informationInterviewAssault';
 
+import {
+  uiSchema as individualsInvolvedChoiceUISchema,
+  schema as individualsInvolvedChoiceSchema,
+} from './individualsInvolvedChoice';
+
+import {
+  uiSchema as incidentIndividualNameUISchema,
+  schema as incidentIndividualNameSchema,
+} from './incidentIndividualName';
+
 export const informationPage = {
   uiSchema: informationUISchema,
   schema: informationSchema,
@@ -76,4 +86,14 @@ export const informationInterviewCombat = {
 export const informationInterviewAssault = {
   uiSchema: informationInterviewAssaultUISchema,
   schema: informationInterviewAssaultSchema,
+};
+
+export const individualsInvolvedChoice = {
+  uiSchema: individualsInvolvedChoiceUISchema,
+  schema: individualsInvolvedChoiceSchema,
+};
+
+export const incidentIndividualName = {
+  uiSchema: incidentIndividualNameUISchema,
+  schema: incidentIndividualNameSchema,
 };

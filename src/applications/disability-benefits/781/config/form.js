@@ -1,17 +1,14 @@
-// import _ from 'lodash/fp';
-
-// Example of an imported schema:
-// import fullSchema from '../21-0781-schema.json';
-
 import IntroductionPage from '../containers/IntroductionPage';
 import ConfirmationPage from '../containers/ConfirmationPage';
 
-// const { } = fullSchema.properties;
-
-// const { } = fullSchema.definitions;
-
-// Define all the fields in the form to aid reuse
-// const formFields = {};
+import {
+  is781,
+  is781a,
+  isAnswering781Questions,
+  isAnswering781AQuestions,
+  isUploading781Form,
+  isUploading781AForm,
+} from '../utils';
 
 import {
   informationPage,
@@ -22,6 +19,8 @@ import {
   uploadPtsdSecondary,
   informationInterviewCombat,
   informationInterviewAssault,
+  individualsInvolvedChoice,
+  incidentIndividualName,
 } from '../pages';
 
 const formConfig = {
@@ -62,59 +61,57 @@ const formConfig = {
         ptsdChoice: {
           path: 'ptsdChoice',
           title: 'Disability Details',
-          depends: form =>
-            form['view:selectablePtsdTypes']['view:combatPtsdType'] ||
-            form['view:selectablePtsdTypes']['view:noncombatPtsdType'],
+          depends: form => is781(form),
           uiSchema: ptsdChoice.uiSchema,
           schema: ptsdChoice.schema,
         },
         uploadPtsd: {
           path: 'upload-781',
           title: 'Disability Details',
-          depends: form =>
-            form['view:uploadPtsdChoice'] === 'upload' &&
-            (form['view:selectablePtsdTypes']['view:combatPtsdType'] ||
-              form['view:selectablePtsdTypes']['view:noncombatPtsdType']),
+          depends: form => isUploading781Form(form) && is781(form),
           uiSchema: uploadPtsd.uiSchema,
           schema: uploadPtsd.schema,
         },
         informationInterviewCombat: {
           path: 'information-781',
           title: 'Disability Details',
-          depends: form =>
-            form['view:uploadPtsdChoice'] === 'answerQuestions' &&
-            (form['view:selectablePtsdTypes']['view:combatPtsdType'] ||
-              form['view:selectablePtsdTypes']['view:noncombatPtsdType']),
+          depends: form => isAnswering781Questions(form) && is781(form),
           uiSchema: informationInterviewCombat.uiSchema,
           schema: informationInterviewCombat.schema,
+        },
+        individualsInvolvedChoice: {
+          title: 'Individuals Involved Choice',
+          path: 'individualsInvolvedChoice',
+          depends: form => isAnswering781Questions(form) && is781(form),
+          uiSchema: individualsInvolvedChoice.uiSchema,
+          schema: individualsInvolvedChoice.schema,
+        },
+        incidentIndividualName: {
+          title: 'Individuals Involved Choice',
+          path: 'individualsInvolvedChoice',
+          depends: form => isAnswering781Questions(form) && is781(form),
+          uiSchema: incidentIndividualName.uiSchema,
+          schema: incidentIndividualName.schema,
         },
 
         ptsdSecondaryChoice: {
           path: 'ptsdSecondaryChoice',
           title: 'Disability Details',
-          depends: form =>
-            form['view:selectablePtsdTypes']['view:mstPtsdType'] ||
-            form['view:selectablePtsdTypes']['view:assaultPtsdType'],
+          depends: form => is781a(form),
           uiSchema: ptsdSecondaryChoice.uiSchema,
           schema: ptsdSecondaryChoice.schema,
         },
         uploadPtsdSecondary: {
           path: 'upload-781a',
           title: 'Disability Details',
-          depends: form =>
-            form['view:uploadPtsdSecondaryChoice'] === 'upload' &&
-            (form['view:selectablePtsdTypes']['view:mstPtsdType'] ||
-              form['view:selectablePtsdTypes']['view:assaultPtsdType']),
+          depends: form => isUploading781AForm(form) && is781a(form),
           uiSchema: uploadPtsdSecondary.uiSchema,
           schema: uploadPtsdSecondary.schema,
         },
         informationInterviewAssault: {
           path: 'information-781a',
           title: 'Disability Details',
-          depends: form =>
-            form['view:uploadPtsdSecondaryChoice'] === 'answerQuestions' &&
-            (form['view:selectablePtsdTypes']['view:mstPtsdType'] ||
-              form['view:selectablePtsdTypes']['view:assaultPtsdType']),
+          depends: form => isAnswering781AQuestions(form) && is781a(form),
           uiSchema: informationInterviewAssault.uiSchema,
           schema: informationInterviewAssault.schema,
         },

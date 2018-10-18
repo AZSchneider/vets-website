@@ -224,3 +224,9 @@ export const ptsdChoiceDescription = (
     </p>
   </AdditionalInfo>
 );
+
+export const individualsInvolvedTitle = () => (
+  <legend className="schemaform-block-title schemaform-title-underline">
+    PTSD: Individuals Involved
+  </legend>
+);
