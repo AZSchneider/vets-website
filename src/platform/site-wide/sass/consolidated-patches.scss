@@ -36,10 +36,18 @@ header.merger {
 
     button.va-crisis-line {
       background-image: none;
+      @media (min-width: $large-screen) {
+        height: 32px;
+        font-size: 16px;
+        border-radius: 0 0 .2em .2em;
+        box-shadow: 0 2px 5px #212121;
+        text-align: left;
+        justify-content: space-between;
+      }
     }
   }
   @media (min-width: $medium-screen) {
-    va-notice--banner-inner, .va-crisis-line-container {
+    .va-notice--banner-inner, .va-crisis-line-container {
       width: $teamsite-width;
       padding-left: 1rem;
     }
